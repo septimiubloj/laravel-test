@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Repositories\DatabasePostSearchRepository;
+use App\Repositories\EloquentPostSearchRepository;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -12,7 +12,7 @@ class HomeController extends Controller
      * @param DatabasePostSearchRepository $repository
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function index(Request $request, DatabasePostSearchRepository $repository)
+    public function index(Request $request, EloquentPostSearchRepository $repository)
     {
         $query = $repository->search($request->get('keyword'));
 
